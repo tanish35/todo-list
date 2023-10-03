@@ -5,7 +5,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 const data = {
-    'arr': ['hello', 'world'],
+    'arr': [],
     'done': []
 }
 
@@ -19,5 +19,10 @@ app.get("/", (req, res) => {
 
 app.post("/newitem", (req, res) => {
     data.arr.push(req.body.item);
+    res.redirect("/");
+});
+
+app.post("/delete", (req, res) => {
+    data.arr = data.arr.filter(item => item !== Object.keys(req.body)[0]);
     res.redirect("/");
 });

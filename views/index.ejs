@@ -15,9 +15,15 @@
     <% if (locals.data) { %>
         <ul>
             <% for (let i=0; i < data['arr'].length; i++) { %>
-                <li>
-                    <%= data['arr'][i] %>
-                </li>
+                <div class="flex1">
+                    <li>
+                        <%= data['arr'][i] %>
+                    </li>
+                    <form action="/delete" method="post">
+                        <input type="submit" name=<%=data['arr'][i] %>
+                        alt="Delete" class="btn1" value="">
+                    </form>
+                </div>
                 <% } %>
                     <% } %>
                         <div>

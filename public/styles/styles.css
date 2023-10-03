@@ -5,3 +5,21 @@
 li {
     user-select: none;
 }
+
+.flex1 {
+    display: flex;
+    justify-content: space-around;
+    max-width: fit-content;
+}
+
+.btn1 {
+    margin-left: 1.2rem;
+    margin-bottom: 2rem;
+    background-image: url('https://www.svgrepo.com/show/22981/trash-can.svg');
+    background-size: contain;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+    border: none;
+
+}
