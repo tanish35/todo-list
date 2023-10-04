@@ -18,13 +18,20 @@ app.get("/", (req, res) => {
 });
 
 app.post("/newitem", (req, res) => {
-    console.log(req.body.item);
-    data.arr.push(req.body.item);
+    if (!(data.arr.includes(req.body.item))) {
+        data.arr.push(req.body.item);
+    }
     res.redirect("/");
 });
 
 app.post("/delete", (req, res) => {
-    console.log(Object.keys(req.body)[0]);
-    data.arr = data.arr.filter(item => item.replace(/\s/g, '') !== Object.keys(req.body)[0]);
+    if (!(data.done.includes(Object.keys(req.body)[0]))) {
+        data.done.push(Object.keys(req.body)[0])
+    }
+    res.redirect("/");
+});
+
+app.post("/add", (req, res) => {
+    data.done = data.done.filter((item) => item != Object.keys(req.body)[0])
     res.redirect("/");
 });

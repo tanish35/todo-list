@@ -16,13 +16,15 @@
         <ul>
             <% for (let i=0; i < data['arr'].length; i++) { %>
                 <div class="flex1">
-                    <li>
-                        <%= data['arr'][i] %>
-                    </li>
-                    <form action="/delete" method="post">
-                        <input type="submit" name=<%=data['arr'][i].replace(/\s/g, '' ) %>
-                        alt="Delete" class="btn1" value="">
-                    </form>
+                    <% if (data.done.includes(data.arr[i])) { %>
+                        <li class="strike">
+                            <%= data['arr'][i] %>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <%= data['arr'][i] %>
+                            </li>
+                            <% } %>
                 </div>
                 <% } %>
                     <% } %>
