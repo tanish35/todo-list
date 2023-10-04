@@ -42,7 +42,7 @@ app.post("/add", (req, res) => {
     res.redirect("/");
 });
 
-app.patch("/deleteperma", (req, res) => {
+app.post("/deleteperma", (req, res) => {
     data.arr = data.arr.filter((item) => item != Object.keys(req.body)[0])
     res.redirect("/");
 });

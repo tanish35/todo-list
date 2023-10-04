@@ -1,6 +1,6 @@
 $('li').dblclick(function () {
     $.ajax({
-        type: "patch",
+        type: "post",
         url: "/deleteperma",
         data: $(this).text().trim()
     });
