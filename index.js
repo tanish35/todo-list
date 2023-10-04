@@ -1,12 +1,14 @@
 import express from 'express';
 const app = express();
+import { format } from 'date-fns';
 const port = 3000;
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 const data = {
     'arr': [],
-    'done': []
+    'done': [],
+    'date': null
 }
 
 app.listen(port, () => {
@@ -14,6 +16,10 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
+    res.setHeader('Cache-Control', 'no-store');
+    const today = new Date();
+    const formattedDate = format(today, "do MMMM yyyy");
+    data.date = formattedDate;
     res.render("index.ejs", { data: data });
 });
 
@@ -33,5 +39,10 @@ app.post("/delete", (req, res) => {
 
 app.post("/add", (req, res) => {
     data.done = data.done.filter((item) => item != Object.keys(req.body)[0])
+    res.redirect("/");
+});
+
+app.patch("/deleteperma", (req, res) => {
+    data.arr = data.arr.filter((item) => item != Object.keys(req.body)[0])
     res.redirect("/");
 });

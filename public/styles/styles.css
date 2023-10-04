@@ -1,3 +1,9 @@
+body,
+html {
+    background-image: url(layered-waves-haikei.svg);
+    background-size: cover;
+}
+
 .strike {
     text-decoration: line-through;
 }
@@ -9,17 +15,48 @@ li {
 .flex1 {
     display: flex;
     justify-content: space-around;
-    max-width: fit-content;
+    margin: 1.5rem;
+    margin-top: 3rem;
 }
 
 .btn1 {
     margin-left: 1.2rem;
     margin-bottom: 2rem;
-    background-image: url('https://www.svgrepo.com/show/22981/trash-can.svg');
-    background-size: contain;
+    background-color: #001220;
     padding: 0;
     height: 25px;
     width: 25px;
     border: none;
 
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2rem !important;
+    font-size: 4rem !important;
+    color: white !important;
+}
+
+li {
+    font-size: 2rem;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: white;
+}
+
+input {
+    height: 3rem;
+    width: 20rem;
+    border: none;
+    border-radius: 5%;
+    margin: 0;
+    font-family: 'Yanone Kaffeesatz', sans-serif !important;
+    color: white !important;
+    background-color: #001220 !important;
+    outline: none;
+}
+
+button {
+    width: 10rem;
+    height: 3rem;
+    margin-left: 3rem !important;
 }
