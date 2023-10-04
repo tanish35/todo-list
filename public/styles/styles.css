@@ -1,9 +1,7 @@
 body,
 html {
-    background-image: url(layered-waves-haikei.svg);
-    background-size: cover;
+    background-color: #001220 !important;
 }
-
 .strike {
     text-decoration: line-through;
 }
