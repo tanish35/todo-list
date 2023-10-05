@@ -2,6 +2,7 @@ body,
 html {
     background-color: #001220 !important;
 }
+
 .strike {
     text-decoration: line-through;
 }
@@ -39,6 +40,8 @@ li {
     font-size: 2rem;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     color: white;
+    user-select: none;
+
 }
 
 input {
@@ -57,4 +60,8 @@ button {
     width: 10rem;
     height: 3rem;
     margin-left: 3rem !important;
+}
+
+ul {
+    list-style-type: none;
 }
