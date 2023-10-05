@@ -1,6 +1,7 @@
 import express from 'express';
 const app = express();
 import { format } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 const port = 3000;
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +19,7 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     const today = new Date();
-    const formattedDate = format(today, "do MMMM yyyy");
+    const formattedDate = format(utcToZonedTime(today, 'Asia/Kolkata'), "do MMMM yyyy");
     data.date = formattedDate;
     res.render("index.ejs", { data: data });
 });
