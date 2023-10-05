@@ -1,10 +1,12 @@
 $('li').dblclick(function () {
+    $(this).remove();
     $.ajax({
         type: "post",
         url: "/deleteperma",
         data: $(this).text().trim()
     });
 });
+
 
 $('li').mouseup(function () {
     if ($(this).hasClass('strike') == false) {
